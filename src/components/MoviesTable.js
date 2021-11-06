@@ -3,7 +3,7 @@ import star from '../img/star.png'
 
 const MoviesTable = ({ apiFacade }) => {
     const [movies, setMovies] = useState([]);
-    const [isSorted, setIsSorted] = useState("unsorted");
+    const [isSorted, setIsSorted] = useState("");
 
     useEffect(() => {
         const getMovies = async () => {
@@ -21,7 +21,7 @@ const MoviesTable = ({ apiFacade }) => {
 
     const sortByYear = () => {
         setIsSorted("byyear")
-        const sorted = (movies.sort((a, b) => { return a.year - b.year }))
+        const sorted = (movies.sort((a, b) => { return b.year - a.year }))
         setMovies(sorted)
     }
 
@@ -34,7 +34,7 @@ const MoviesTable = ({ apiFacade }) => {
 
     const sortByRating = () => {
         setIsSorted("byrating")
-        const sorted = (movies.sort((a, b) => { return a.rating - b.rating }))
+        const sorted = (movies.sort((a, b) => { return b.rating - a.rating }))
         setMovies(sorted)
 
     }
