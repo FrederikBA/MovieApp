@@ -67,3 +67,12 @@ ul.header li a:hover:not(.active) {
   background-color: #212529;
   font-family: "Arial Black";
 }
+
+.mt-head-title {
+  cursor: pointer;
+}
+
+.mt-head-title:hover {
+  cursor: pointer;
+  background-color: #111;
+}
