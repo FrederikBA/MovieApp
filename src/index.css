@@ -1,13 +1,69 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+ul.header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #26292c;
+}
+
+ul.header li {
+  float: left;
+}
+
+ul.header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.header li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.imdbLink {
+  text-decoration: none;
+  color: black;
+  background-color: #f3ce13;
+  height: 40px;
+  width: auto;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: "Arial Black";
+  font-weight: bold;
+}
+
+.movieRecord {
+  margin-bottom: 16px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+}
+
+.movieTable {
+  font-family: "Arial";
+}
+
+.mt-head {
+  background-color: #212529;
+  font-family: "Arial Black";
 }
