@@ -14,7 +14,7 @@ function App({ apiFacade }) {
         <Route path='/' element={<Home />} />
         <Route path='movies-list' element={<MoviesList apiFacade={apiFacade} />} />
         <Route path='movies-table' element={<MoviesTable apiFacade={apiFacade} />} />
-        <Route path='add-movie' element={<AddMovie />} />
+        <Route path='add-movie' element={<AddMovie apiFacade={apiFacade} />} />
       </Routes>
     </div>
   )

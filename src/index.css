@@ -76,3 +76,16 @@ ul.header li a:hover:not(.active) {
   cursor: pointer;
   background-color: #111;
 }
+
+.addMovie {
+  text-align: center;
+}
+
+.addInput {
+  margin-top: 10px;
+}
+
+.addButton {
+  width: 150px;
+  margin-top: 10px;
+}

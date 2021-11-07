@@ -14,26 +14,25 @@ const MoviesTable = ({ apiFacade }) => {
     }, []);
 
     const sortById = () => {
-        setSorted("byid")
+        setSorted("byId")
         const sorted = (movies.sort((a, b) => { return a.id - b.id }))
         setMovies(sorted)
     }
 
     const sortByYear = () => {
-        setSorted("byyear")
+        setSorted("byYear")
         const sorted = (movies.sort((a, b) => { return b.year - a.year }))
         setMovies(sorted)
     }
 
     const sortByTitle = () => {
-        setSorted("bytitle")
+        setSorted("byTitle")
         const sorted = (movies.sort((a, b) => { return (a.title < b.title) ? -1 : (a.title > b.title) ? 1 : 0; }))
-        console.log(sorted);
         setMovies(sorted)
     }
 
     const sortByRating = () => {
-        setSorted("byrating")
+        setSorted("byRating")
         const sorted = (movies.sort((a, b) => { return b.rating - a.rating }))
         setMovies(sorted)
     }
