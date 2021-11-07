@@ -60,4 +60,4 @@ const MoviesTable = ({ apiUtils }) => {
     )
 }
 
-export default MoviesTable;
+export default MoviesTable

@@ -23,4 +23,4 @@ const MoviesList = ({ apiUtils }) => {
     )
 }
 
-export default MoviesList;
+export default MoviesList
