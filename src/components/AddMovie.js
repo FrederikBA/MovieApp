@@ -10,6 +10,7 @@ const AddMovie = ({ apiFacade }) => {
         setMovie({ ...movie, [event.target.id]: event.target.value })
     }
 
+
     const handleClick = (event) => {
         apiFacade.addMovie(movie.year, movie.title, movie.imdb, movie.rating)
             .catch(error => {
@@ -22,7 +23,6 @@ const AddMovie = ({ apiFacade }) => {
         setStatusMessage('Movie Added Successfully!');
         event.preventDefault()
     }
-
 
     return (
         <div className="addMovie">
