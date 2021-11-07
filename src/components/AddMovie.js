@@ -32,7 +32,7 @@ const AddMovie = ({ apiUtils }) => {
     return (
         <div>
             <div className="addMovie">
-                <h2>Add Movie (Version 2)</h2>
+                <h2>Add Movie</h2>
                 <p className="statusMsg" style={{ color: msgColor }}>{statusMessage}</p>
                 <form onChange={handleInput} className="form-group">
                     <input className="form-control addInput" id="year" placeholder="Enter year" type="text"></input>
