@@ -6,7 +6,7 @@ import MoviesList from './components/MoviesList';
 import MoviesTable from './components/MoviesTable';
 import AddMovie from './components/AddMovie';
 
-function App({ apiFacade, apiUtils }) {
+function App({ apiUtils }) {
   return (
     <div>
       <Header />
