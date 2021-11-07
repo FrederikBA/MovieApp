@@ -89,3 +89,7 @@ ul.header li a:hover:not(.active) {
   width: 150px;
   margin-top: 10px;
 }
+
+.statusMsg {
+  font-weight: bold;
+}
