@@ -1,17 +1,20 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react'
 import star from '../img/star.png'
 
-const MoviesTable = ({ apiFacade }) => {
+const MoviesTable = ({ apiUtils }) => {
     const [movies, setMovies] = useState([]);
     const [sorted, setSorted] = useState("");
 
+    const URL = apiUtils.getUrl()
+
     useEffect(() => {
         const getMovies = async () => {
-            const movieResponse = await apiFacade.getMovies()
-            setMovies(movieResponse.all)
+            const response = await axios.get(URL + '/all')
+            setMovies(response.data.all);
         }
         getMovies()
-    }, []);
+    }, [URL]);
 
     const sortById = () => {
         setSorted("byId")

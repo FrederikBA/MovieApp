@@ -6,15 +6,15 @@ import MoviesList from './components/MoviesList';
 import MoviesTable from './components/MoviesTable';
 import AddMovie from './components/AddMovie';
 
-function App({ apiFacade }) {
+function App({ apiFacade, apiUtils }) {
   return (
     <div>
       <Header />
       <Routes>
         <Route path='/' element={<Search />} />
-        <Route path='movies-list' element={<MoviesList apiFacade={apiFacade} />} />
-        <Route path='movies-table' element={<MoviesTable apiFacade={apiFacade} />} />
-        <Route path='add-movie' element={<AddMovie apiFacade={apiFacade} />} />
+        <Route path='movies-list' element={<MoviesList apiUtils={apiUtils} />} />
+        <Route path='movies-table' element={<MoviesTable apiUtils={apiUtils} />} />
+        <Route path='add-movie' element={<AddMovie apiUtils={apiUtils} />} />
       </Routes>
     </div>
   )

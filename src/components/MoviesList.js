@@ -1,15 +1,18 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 
-const MoviesList = ({ apiFacade }) => {
+const MoviesList = ({ apiUtils }) => {
     const [movies, setMovies] = useState([]);
+
+    const URL = apiUtils.getUrl()
 
     useEffect(() => {
         const getMovies = async () => {
-            const movieResponse = await apiFacade.getMovies()
-            setMovies(movieResponse.all)
+            const response = await axios.get(URL + '/all')
+            setMovies(response.data.all);
         }
         getMovies()
-    }, []);
+    }, [URL]);
 
 
     return (
