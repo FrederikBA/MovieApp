@@ -32,7 +32,7 @@ const MoviesTableEdit = ({ apiUtils }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {movies.map((movie) => <tr key={movie.id}><td>{movie.id}</td><td>{movie.title}</td><td><NavLink to={`/movies-table-edit/${movie.id}`}><button>Edit</button></NavLink></td><td><button id={movie.id} onClick={deleteMovie}>Delete</button></td></tr>)}
+                    {movies.map((movie) => <tr key={movie.id}><td>{movie.id}</td><td>{movie.title}</td><td><NavLink to={`/movies-table-edit/${movie.id}`}><button className="btn btn-primary">Edit</button></NavLink></td><td><button className="btn btn-danger" id={movie.id} onClick={deleteMovie}>Delete</button></td></tr>)}
                 </tbody>
             </table>
         </div>
