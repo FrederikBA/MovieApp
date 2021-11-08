@@ -34,17 +34,18 @@ const EditMovie = ({ apiUtils }) => {
             setMsgColor('#4caf50');
             setStatusMessage('Movie Edited Successfully!');
         } catch (error) {
-            console.log(error.response.data.message);
+            setStatusMessage(error.response.data.message);
+            setMsgColor('#FF0000')
         }
     }
 
 
     return (
-        <div>
+        <div className="centerAligned">
             <h1>Edit Movie</h1>
             <form onChange={handleInput} className="form-group">
                 <p className="statusMsg" style={{ color: msgColor }}>{statusMessage}</p>
-                <p>You are editing the movie with ID: {id}</p>
+                <p className="statusMsg">You are editing the movie with ID: {id}</p>
                 <input className="form-control addInput" id="year" defaultValue={movie.year} placeholder="Enter year" type="text"></input>
                 <input className="form-control addInput" id="title" defaultValue={movie.title} placeholder="Enter title" type="text"></input>
                 <input className="form-control addInput" id="imdb" defaultValue={movie.imdb} placeholder="Enter imdb link" type="text"></input>

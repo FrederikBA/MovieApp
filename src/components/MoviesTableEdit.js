@@ -13,7 +13,12 @@ const MoviesTableEdit = ({ apiUtils }) => {
             setMovies(response.data.all);
         }
         getMovies()
-    }, [URL]);
+    }, [URL, movies]);
+
+    const deleteMovie = async (event) => {
+        const id = event.target.id
+        await axios.delete(URL + '/' + id)
+    }
 
     return (
         <div>
@@ -27,7 +32,7 @@ const MoviesTableEdit = ({ apiUtils }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {movies.map((movie) => <tr key={movie.id}><td>{movie.id}</td><td>{movie.title}</td><td><NavLink to={`/movies-table-edit/${movie.id}`}><button>Edit</button></NavLink></td><td><button>Delete</button></td></tr>)}
+                    {movies.map((movie) => <tr key={movie.id}><td>{movie.id}</td><td>{movie.title}</td><td><NavLink to={`/movies-table-edit/${movie.id}`}><button>Edit</button></NavLink></td><td><button id={movie.id} onClick={deleteMovie}>Delete</button></td></tr>)}
                 </tbody>
             </table>
         </div>
