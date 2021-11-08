@@ -7,6 +7,7 @@ import MoviesTable from './components/MoviesTable';
 import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
 import DeleteMovie from './components/DeleteMovie';
+import MoviesTableEdit from './components/MoviesTableEdit';
 
 function App({ apiUtils }) {
   return (
@@ -16,6 +17,8 @@ function App({ apiUtils }) {
         <Route path='/' element={<Search />} />
         <Route path='movies-list' element={<MoviesList apiUtils={apiUtils} />} />
         <Route path='movies-table' element={<MoviesTable apiUtils={apiUtils} />} />
+        <Route path='movies-table-edit' element={<MoviesTableEdit apiUtils={apiUtils} />} />
+        <Route path='movies-table-edit/:id' element={<EditMovie apiUtils={apiUtils} />} />
         <Route path='add-movie' element={<AddMovie apiUtils={apiUtils} />} />
         <Route path='edit-movie' element={<EditMovie apiUtils={apiUtils} />} />
         <Route path='delete-movie' element={<DeleteMovie apiUtils={apiUtils} />} />
