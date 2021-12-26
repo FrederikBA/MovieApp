@@ -13,11 +13,14 @@ const MoviesTableEdit = ({ apiUtils }) => {
             setMovies(response.data.all);
         }
         getMovies()
-    }, [URL, movies]);
+    }, [URL, setMovies]);
 
-    const deleteMovie = async (event) => {
-        const id = event.target.id
+    const deleteMovie = async (id) => {
         await axios.delete(URL + '/' + id)
+
+        //Fetch the updated movie list
+        const response = await axios.get(URL + '/all')
+        setMovies(response.data.all)
     }
 
     return (
@@ -28,11 +31,11 @@ const MoviesTableEdit = ({ apiUtils }) => {
                         <th className="mt-head-title">ID</th>
                         <th className="mt-head-title">Title</th>
                         <th className="mt-head-title">Edit</th>
-                        <th className="mt-head-title">Delete</th>
+                        <th className="mt-head-title">Delete</th>   
                     </tr>
                 </thead>
                 <tbody>
-                    {movies.map((movie) => <tr key={movie.id}><td>{movie.id}</td><td>{movie.title}</td><td><NavLink to={`/movies-table-edit/${movie.id}`}><button className="btn btn-primary">Edit</button></NavLink></td><td><button className="btn btn-danger" id={movie.id} onClick={deleteMovie}>Delete</button></td></tr>)}
+                    {movies.map((movie) => <tr key={movie.id}><td>{movie.id}</td><td>{movie.title}</td><td><NavLink to={`/movies-table-edit/${movie.id}`}><button className="btn btn-primary">Edit</button></NavLink></td><td><button className="btn btn-danger" id={movie.id} onClick={() =>deleteMovie(movie.id)}>Delete</button></td></tr>)}
                 </tbody>
             </table>
         </div>
