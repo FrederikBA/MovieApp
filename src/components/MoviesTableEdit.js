@@ -13,7 +13,7 @@ const MoviesTableEdit = ({ apiUtils }) => {
             setMovies(response.data.all);
         }
         getMovies()
-    }, [URL, setMovies]);
+    }, [URL]);
 
     const deleteMovie = async (id) => {
         await axios.delete(URL + '/' + id)
